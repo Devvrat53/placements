@@ -54,9 +54,9 @@ def prediction(df_user, pkl_file):
     prediction = pkl_file.predict(X)
     prediction_prob = pkl_file.predict_proba(X)
     if prediction == 0:
-        st.write("You'll not be placed!".format(np.round(prediction_prob * 100), 3))
+        st.write("You'll not be placed!")
     else:
-        st.write("You'll be placed!".format(np.round(prediction_prob * 100), 3))
+        st.write("You'll be placed!")
 
 if __name__ == '__main__':
     st.set_page_config(page_title= 'Placement Prediction', layout= 'wide')
