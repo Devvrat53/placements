@@ -51,7 +51,6 @@ def load_pickle(algo):
 def prediction(df_user, pkl_file):
     X = df_user.iloc[:, :8].values
     prediction = pkl_file.predict(X)
-    prediction_prob = pkl_file.predict_proba(X)
     if prediction == 0:
         st.write("You'll not be placed!")
     else:
