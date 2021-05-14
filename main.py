@@ -30,8 +30,7 @@ def user_input():
         'MBA_Percent': mba_percent}
     # Creating the dataframe
     df_user = pd.DataFrame(data, index= [0])
-    df_u = preprocessing(df_user)
-    return df_u
+    return df_user
 
 def preprocessing(df_user):
     df_user['Gender'].replace(['M', 'F'], [0, 1], inplace= True)
@@ -69,8 +68,9 @@ if __name__ == '__main__':
     df_user = user_input()
     if st.checkbox("Check your input"):
         st.write(df_user)
+    df_u = preprocessing(df_user)
     # Select the algorithm
     algo = st.sidebar.selectbox('Select the Algorithm to apply', ['Logistic Regression Classifier', 'Random Forest Classifier', 'Support Vector Machine Classifier', 'Gaussian Naïve Bayes Classifier'])
     pkl_file = load_pickle(algo)
     # Predict 
-    prediction(df_user, pkl_file)
+    prediction(df_u, pkl_file)
