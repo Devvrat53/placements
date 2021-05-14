@@ -73,4 +73,5 @@ if __name__ == '__main__':
     algo = st.sidebar.selectbox('Select the Algorithm to apply', ['Logistic Regression Classifier', 'Random Forest Classifier', 'Support Vector Machine Classifier', 'Gaussian Naïve Bayes Classifier'])
     pkl_file = load_pickle(algo)
     # Predict 
-    prediction(df_u, pkl_file)
+    if st.button('Predict'):
+        prediction(df_u, pkl_file)
